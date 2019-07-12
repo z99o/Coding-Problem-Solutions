@@ -14,8 +14,12 @@ def fun(n):
 
 def main():
     random.seed 
-    samples = 10 #number of samples
-    increase_by = 50 #how much each sample increases in value
+    samples = 9 #number of samples
+    increase_by = 100 #100-900
+    for i in range(1,samples+1):
+        n = increase_by*i
+        profile.runctx('fun(n)',{},{'n':n,'fun':fun}) #creates function profiles, replace fun with function name
+    increase_by = 1000 # 1000-9000
     for i in range(1,samples+1):
         n = increase_by*i
         profile.runctx('fun(n)',{},{'n':n,'fun':fun}) #creates function profiles, replace fun with function name
